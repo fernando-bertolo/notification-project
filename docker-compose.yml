@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rabbitmq
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
