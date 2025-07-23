@@ -12,11 +12,12 @@ import { lastValueFrom, Observable } from 'rxjs';
 import { NotificationDTO } from '../dtos/notification.dto';
 import { ClientProxy } from '@nestjs/microservices';
 import { NotificationService } from '../services/notification.service';
+import { NOTIFICATION_CLIENT } from 'src/shared/constants/notification-service.constants';
 
 @Controller('api/notificar')
 export class NotificationController {
     constructor(
-        @Inject('NOTIFICATION_CLIENT')
+        @Inject(NOTIFICATION_CLIENT)
         private readonly client: ClientProxy,
         private readonly notificationService: NotificationService,
     ) {}

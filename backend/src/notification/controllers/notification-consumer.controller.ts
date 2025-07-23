@@ -5,13 +5,14 @@ import { NotificationDTO } from '../dtos/notification.dto';
 import { NotificationController } from './notification.controller';
 import { CreateNotificationDTO } from '../dtos/create-notification.dto';
 import { RabbitMQQueues } from 'src/shared/constants/rabbitmq.constants';
+import { NOTIFICATION_CLIENT } from 'src/shared/constants/notification-service.constants';
 
 @Controller()
 export class NotificationConsumerController {
     constructor(
         private readonly logger: Logger,
         private readonly notificationService: NotificationService,
-        @Inject('NOTIFICATION_CLIENT')
+        @Inject(NOTIFICATION_CLIENT)
         private readonly client: ClientProxy,
     ) {}
 

@@ -1,7 +1,0 @@
-# Primeiro de tudo (backend)
-
-Separar o consumer do producer (NotificationController e um NotificationService);
-Organizar um pouco melhor o codigo
-Adicionar nomes de fila como constantes
-Adicionar variavel de ambiente para porta do servidor
-Adicionar logs

@@ -8,26 +8,6 @@ services:
     networks:
       - project-network
 
-  backend:
-    container_name: backend
-    build: ./backend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - rabbitmq
-    networks:
-      - project-network
-
-  frontend:
-    container_name: frontend
-    build: ./frontend
-    ports:
-      - "4200:4200"
-    depends_on:
-      - backend
-    networks:
-      - project-network
-
 networks:
   project-network:
     driver: bridge
